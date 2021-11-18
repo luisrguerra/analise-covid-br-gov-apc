@@ -1,3 +1,10 @@
+
+#trocar diretório atual para a pasta do programa
+import os
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
 #Funções basicas para uso geral
 
 def lerCSV (arquivo):
@@ -23,6 +30,7 @@ def baixarArquivosCovid ():
         downloadArquivo('https://www.dropbox.com/s/5zr6otkwtpv0xvy/10_09_2021_covid.csv?dl=1','10_09_2021_covid.csv')
 
 def dadosCovid(ano):
+
     if ano == "2020": 
        arquivo = open('2020_covid.csv', encoding="utf-8")
     elif ano == "2021":
