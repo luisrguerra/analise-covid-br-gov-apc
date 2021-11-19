@@ -9,11 +9,7 @@ def municipioGraficos(ano,municipioEscolhido):
     dadosMunicipio =  funcoes.filtrar(funcoes.dadosCovid(ano),"municipio",municipioEscolhido)
 
     #Lista de cada dado, todos organizados na mesma ordem
-    #estado = filtrarEmListaUnica(dadosMunicipio,"municipio",municipioEscolhido,"estado")
-    #municipio = filtrarEmListaUnica(dadosMunicipio,"municipio",municipioEscolhido,"municipio")
-    #nomeRegiaoSaude = filtrarEmListaUnica(dadosMunicipio,"municipio",municipioEscolhido,"nomeRegiaoSaude")
     data = funcoes.filtrarEmListaUnica(dadosMunicipio,"municipio",municipioEscolhido,"data")
-    #populacao = filtrarEmListaUnica(dadosMunicipio,"municipio",municipioEscolhido,"populacao")
     casosAcumulados = funcoes.filtrarEmListaUnica(dadosMunicipio,"municipio",municipioEscolhido,"casosAcumulados")
     casosNovos = funcoes.filtrarEmListaUnica(dadosMunicipio,"municipio",municipioEscolhido,"casosNovos")
     obitosAcumulado = funcoes.filtrarEmListaUnica(dadosMunicipio,"municipio",municipioEscolhido,"obitosAcumulado")
@@ -21,7 +17,8 @@ def municipioGraficos(ano,municipioEscolhido):
 
     textoAcumulados = municipioEscolhido + " - Casos Acumulados/Mortes Acumuladas"
     textoNovos =  municipioEscolhido + " - Casos Novos/Mortes Novas "
-
+   
+    print(type(casosAcumulados[0]))
     graficos.linhaDuplo (textoAcumulados, #título
                        data, # valores de x
                        casosAcumulados, # valores de y1

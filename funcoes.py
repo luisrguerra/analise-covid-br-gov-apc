@@ -8,9 +8,9 @@ def diretorioAtual():
 def dadosCovid(ano):
 
     if ano == "2020": 
-       arquivo = open('2020_covid.csv', encoding="utf-8")
+       arquivo = open('dados/2020_covid.csv', encoding="utf-8")
     elif ano == "2021":
-       arquivo = open('10_09_2021_covid.csv', encoding="utf-8")
+       arquivo = open('dados/10_09_2021_covid.csv', encoding="utf-8")
     # Biblioteca necessária para ler arquivo .csv
     import csv
     return csv.reader(arquivo, delimiter=';')  

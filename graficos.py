@@ -1,7 +1,7 @@
 #Funções para gerar gráficos
+import plotly.graph_objects as go
 
 def linhaBasico (valorX,valorY):
-    import plotly.graph_objects as go
 
     traco1 = go.Scatter(
        x = valorX,
@@ -18,7 +18,6 @@ def linhaBasico (valorX,valorY):
     fig.show()
 
 def linhaBasicoTitulo (titulo,valorX,valorY):
-    import plotly.graph_objects as go
 
     traco1 = go.Scatter(
        x = valorX,
@@ -35,7 +34,6 @@ def linhaBasicoTitulo (titulo,valorX,valorY):
     fig.show()
 
 def linhaDuploBasico (valorX,valorY1,valorY2):
-    import plotly.graph_objects as go
 
     traco1 = go.Scatter(
        x = valorX,
@@ -57,7 +55,6 @@ def linhaDuploBasico (valorX,valorY1,valorY2):
     fig.show()
 
 def linhaQuadruploBasico (titulo,valorX,valorY1,nomeY1,valorY2,nomeY2,valorY3,nomeY3,valorY4,nomeY4):
-    import plotly.graph_objects as go
 
     traco1 = go.Scatter(
        x = valorX,
@@ -89,7 +86,6 @@ def linhaQuadruploBasico (titulo,valorX,valorY1,nomeY1,valorY2,nomeY2,valorY3,no
     fig.show()  
 
 def linhaDuplo (titulo,valorX,valorY1,nomeY1,valorY2,nomeY2,tituloX,TituloY):
-    import plotly.graph_objects as go
 
     traco1 = go.Scatter(
        x = valorX,
@@ -105,13 +101,12 @@ def linhaDuplo (titulo,valorX,valorY1,nomeY1,valorY2,nomeY2,tituloX,TituloY):
 
     layout = go.Layout(title = titulo)
     fig = go.Figure(data=data, layout = layout)
-    
+
     fig.update_xaxes(title_text = tituloX)
-    fig.update_yaxes(title_text = TituloY)
+    fig.update_yaxes(title_text = TituloY, type='linear')
     fig.show()
 
 def linhaQuadruplo (titulo,valorX1,valorY1,nomeY1,valorX2,valorY2,nomeY2,valorX3,valorY3,nomeY3,valorX4,valorY4,nomeY4):
-      import plotly.graph_objects as go
 
       traco1 = go.Scatter(
          x = valorX1,
