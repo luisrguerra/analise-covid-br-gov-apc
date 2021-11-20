@@ -1,10 +1,10 @@
 import funcoes
-import graficos
+import graficosDash
 
 funcoes.diretorioAtual()
 
 #Gera gráficos de comparação entre casos/óbitos novos e casos/óbitos totais.
-def municipioGraficos(ano,municipioEscolhido):
+def municipioGraficos(ano,municipioEscolhido,opcao):
     
     dadosMunicipio =  funcoes.filtrar(funcoes.dadosCovid(ano),"municipio",municipioEscolhido)
 
@@ -18,7 +18,8 @@ def municipioGraficos(ano,municipioEscolhido):
     textoAcumulados = municipioEscolhido + " - Casos Acumulados/Mortes Acumuladas"
     textoNovos =  municipioEscolhido + " - Casos Novos/Mortes Novas "
    
-    graficos.linhaDuplo (textoAcumulados, #título
+    if opcao == "acumulados":
+      return graficosDash.linhaDuplo (textoAcumulados, #título
                        data, # valores de x
                        casosAcumulados, # valores de y1
                        "Casos Acumulados", # nome de y1
@@ -26,8 +27,9 @@ def municipioGraficos(ano,municipioEscolhido):
                        "Óbitos Acumulados", # nome de y2
                        "Data", # título do eixo x
                        "") # título do eixo y
-
-    graficos.linhaDuplo (textoNovos,
+    
+    elif opcao == "novos":
+      return graficosDash.linhaDuplo (textoNovos,
                        data,
                        casosNovos,
                        "Casos Novos",
@@ -70,7 +72,7 @@ def acumuladosComparacao(ano,coluna,municipio1,municipio2,municipio3,municipio4)
     else:
        tituloGrafico = ""
     
-    graficos.linhaQuadruplo(
+    return graficosDash.linhaQuadruplo(
         tituloGrafico, #título
         dataMunicipio1, # valores de x1
         proporcaoMunicipio1, # valores de y1
@@ -85,9 +87,3 @@ def acumuladosComparacao(ano,coluna,municipio1,municipio2,municipio3,municipio4)
         proporcaoMunicipio4, # valores de y4
         municipio4 # nome de x4
         )
-
-acumuladosComparacao("2021","casosAcumulados","Cristalina","Águas Lindas de Goiás","Formosa","Planaltina")
-
-acumuladosComparacao("2021","obitosAcumulado","Cristalina","Águas Lindas de Goiás","Formosa","Planaltina")
-
-municipioGraficos("2021","Cristalina")
