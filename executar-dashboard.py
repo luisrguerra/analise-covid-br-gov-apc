@@ -18,6 +18,11 @@ app.layout = html.Div(
     ],
     style = {'font-family':'Helvetica, sans-serif','margin':'1em'}
 )
+
+#Abrir o link do dash no navegador
+import webbrowser
+webbrowser.open('http://localhost:8050/', new=2)
+
 #figure = stock_prices()
 if __name__ == "__main__":
     app.run_server(debug=False)
